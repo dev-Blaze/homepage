@@ -567,6 +567,7 @@ export function cleanServiceGroups(groups) {
             "speedtest",
             "wgeasy",
             "grafana",
+            "gluetun",
           ].includes(type)
         ) {
           if (version) widget.version = parseInt(version, 10);
