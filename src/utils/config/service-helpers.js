@@ -298,6 +298,9 @@ export function cleanServiceGroups(groups) {
           container,
           server,
 
+          // dockhand
+          environment,
+
           // emby, jellyfin
           enableBlocks,
           enableNowPlaying,
@@ -314,7 +317,7 @@ export function cleanServiceGroups(groups) {
           // gamedig
           gameToken,
 
-          // authentik, beszel, glances, immich, komga, mealie, pihole, pfsense, speedtest
+          // authentik, beszel, glances, immich, komga, mealie, netalertx, pihole, pfsense, speedtest
           version,
 
           // glances
@@ -563,6 +566,7 @@ export function cleanServiceGroups(groups) {
             "immich",
             "komga",
             "mealie",
+            "netalertx",
             "pfsense",
             "pihole",
             "speedtest",
@@ -607,6 +611,9 @@ export function cleanServiceGroups(groups) {
           if (previousDays) widget.previousDays = previousDays;
           if (showTime) widget.showTime = showTime;
           if (timezone) widget.timezone = timezone;
+        }
+        if (type === "dockhand") {
+          if (environment) widget.environment = environment;
         }
         if (type === "hdhomerun") {
           if (tuner !== undefined) widget.tuner = tuner;
