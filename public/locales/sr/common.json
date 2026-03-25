@@ -107,6 +107,16 @@
         "episodes": "Епизоде",
         "songs": "Песме"
     },
+    "jellyfin": {
+        "playing": "Репродукција",
+        "transcoding": "Транскодирање",
+        "bitrate": "Проток",
+        "no_active": "Нема активних стримова",
+        "movies": "Филмови",
+        "series": "Серије",
+        "episodes": "Епизоде",
+        "songs": "Песме"
+    },
     "esphome": {
         "offline": "Није на мрежи",
         "offline_alt": "Није на мрежи",
@@ -173,6 +183,13 @@
         "bitrate": "Проток",
         "no_active": "Нема активних стримова",
         "plex_connection_error": "Провери везу са Plex-ом"
+    },
+    "tracearr": {
+        "no_active": "Нема активних стримова",
+        "streams": "Стримови",
+        "transcodes": "Транскодирање",
+        "directplay": "Директно репродуковање",
+        "bitrate": "Проток"
     },
     "omada": {
         "connectedAp": "Повезани АПи",
@@ -272,17 +289,13 @@
         "approved": "Одобрено",
         "available": "Доступно"
     },
-    "jellyseerr": {
+    "seerr": {
         "pending": "На чекању",
         "approved": "Одобрено",
         "available": "Доступно",
-        "issues": "Отворених питања"
-    },
-    "overseerr": {
-        "pending": "На чекању",
+        "completed": "Завршено",
         "processing": "Обрада",
-        "approved": "Одобрено",
-        "available": "Доступно"
+        "issues": "Отворених питања"
     },
     "netalertx": {
         "total": "Укупно",
@@ -533,7 +546,7 @@
         "up": "Горе",
         "pending": "На чекању",
         "down": "Доле",
-        "ok": "Ok"
+        "ok": "Ок"
     },
     "healthchecks": {
         "new": "Сада",
@@ -705,6 +718,10 @@
         "uptime": "Време рада",
         "volumeAvailable": "Доступно"
     },
+    "dispatcharr": {
+        "channels": "Канали",
+        "streams": "Стримови"
+    },
     "mylar": {
         "series": "Серије",
         "issues": "Издања",
@@ -794,10 +811,10 @@
         "series": "Серије"
     },
     "booklore": {
-        "libraries": "Libraries",
-        "books": "Books",
-        "reading": "Reading",
-        "finished": "Finished"
+        "libraries": "Библиотеке",
+        "books": "Књиге",
+        "reading": "Читање",
+        "finished": "Завршено"
     },
     "jdownloader": {
         "downloadCount": "Ред",
@@ -1136,5 +1153,32 @@
         "songs": "Песме",
         "time": "Време",
         "artists": "Извођачи"
+    },
+    "arcane": {
+        "containers": "Контејнера",
+        "images": "Слике",
+        "image_updates": "Ажурирања слика",
+        "images_unused": "Неискоришћено",
+        "environment_required": "ИД окружења је обавезан"
+    },
+    "dockhand": {
+        "running": "Покренуто",
+        "stopped": "Заустављено",
+        "cpu": "Процесор",
+        "memory": "Меморија",
+        "images": "Слике",
+        "volumes": "Јачине звука",
+        "events_today": "Данашњи догађаји",
+        "pending_updates": "Ажурирања на чекању",
+        "stacks": "Стекови",
+        "paused": "Паузирано",
+        "total": "Укупно",
+        "environment_not_found": "Окружење није пронађено"
+    },
+    "sparkyfitness": {
+        "eaten": "Eaten",
+        "burned": "Burned",
+        "remaining": "Remaining",
+        "steps": "Steps"
     }
 }

@@ -20,7 +20,6 @@ async function login(loginUrl, username, password, controllerVersionMajor) {
     };
   }
 
-  // eslint-disable-next-line no-unused-vars
   const [status, contentType, data] = await httpProxy(loginUrl, {
     method: "POST",
     body: JSON.stringify(params),
@@ -96,8 +95,8 @@ export default async function omadaProxyHandler(req, res) {
 
       if (loginStatus !== 200 || loginResponseData.errorCode > 0) {
         return res
-          .status(status)
-          .json({ error: { message: "Error logging in to Oamda controller", url: loginUrl, data: loginResponseData } });
+          .status(loginStatus)
+          .json({ error: { message: "Error logging in to Omada controller", url: loginUrl, data: loginResponseData } });
       }
 
       const { token } = loginResponseData.result;
@@ -226,7 +225,13 @@ export default async function omadaProxyHandler(req, res) {
 
         if (status !== 200 || siteResponseData.errorCode > 0) {
           logger.debug(`HTTP ${status} getting stats for site ${widget.site} with message ${siteResponseData.msg}`);
-          return res.status(500).send(data);
+          return res.status(status === 200 ? 500 : status).json({
+            error: {
+              message: "Error getting stats",
+              url: siteStatsUrl,
+              data: siteResponseData,
+            },
+          });
         }
 
         const alertUrl =
@@ -234,7 +239,6 @@ export default async function omadaProxyHandler(req, res) {
             ? `${url}/api/v2/sites/${siteName}/alerts/num?token=${token}&currentPage=1&currentPageSize=1000`
             : `${url}/${cId}/api/v2/sites/${siteName}/alerts/num?token=${token}&currentPage=1&currentPageSize=1000`;
 
-        // eslint-disable-next-line no-unused-vars
         [status, contentType, data] = await httpProxy(alertUrl, {
           headers: {
             "Csrf-Token": token,

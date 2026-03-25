@@ -107,6 +107,16 @@
         "episodes": "Epizód",
         "songs": "Zeneszám"
     },
+    "jellyfin": {
+        "playing": "Playing",
+        "transcoding": "Transcoding",
+        "bitrate": "Bitrate",
+        "no_active": "No Active Streams",
+        "movies": "Movies",
+        "series": "Series",
+        "episodes": "Episodes",
+        "songs": "Songs"
+    },
     "esphome": {
         "offline": "Nem elérhető",
         "offline_alt": "Nem elérhető",
@@ -173,6 +183,13 @@
         "bitrate": "Bitráta",
         "no_active": "Nincs aktív lejátszás",
         "plex_connection_error": "Plex kapcsolat ellenőrzése"
+    },
+    "tracearr": {
+        "no_active": "No Active Streams",
+        "streams": "Streams",
+        "transcodes": "Transcodes",
+        "directplay": "Direct Play",
+        "bitrate": "Bitrate"
     },
     "omada": {
         "connectedAp": "Csatlakoztatott AP-k",
@@ -272,17 +289,13 @@
         "approved": "Engedélyezett",
         "available": "Elérhető"
     },
-    "jellyseerr": {
-        "pending": "Függőben lévő",
-        "approved": "Jóváhagyott",
-        "available": "Elérhető",
-        "issues": "Nyitott problémák"
-    },
-    "overseerr": {
-        "pending": "Függőben lévő",
-        "processing": "Feldolgozás",
-        "approved": "Jóváhagyott",
-        "available": "Elérhető"
+    "seerr": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "available": "Available",
+        "completed": "Completed",
+        "processing": "Processing",
+        "issues": "Open Issues"
     },
     "netalertx": {
         "total": "Összes",
@@ -704,6 +717,10 @@
         "days": "Days",
         "uptime": "Uptime",
         "volumeAvailable": "Available"
+    },
+    "dispatcharr": {
+        "channels": "Channels",
+        "streams": "Streams"
     },
     "mylar": {
         "series": "Series",
@@ -1136,5 +1153,32 @@
         "songs": "Songs",
         "time": "Time",
         "artists": "Artists"
+    },
+    "arcane": {
+        "containers": "Containers",
+        "images": "Images",
+        "image_updates": "Image Updates",
+        "images_unused": "Unused",
+        "environment_required": "Environment ID Required"
+    },
+    "dockhand": {
+        "running": "Running",
+        "stopped": "Stopped",
+        "cpu": "CPU",
+        "memory": "Memory",
+        "images": "Images",
+        "volumes": "Volumes",
+        "events_today": "Events Today",
+        "pending_updates": "Pending Updates",
+        "stacks": "Stacks",
+        "paused": "Paused",
+        "total": "Total",
+        "environment_not_found": "Environment Not Found"
+    },
+    "sparkyfitness": {
+        "eaten": "Eaten",
+        "burned": "Burned",
+        "remaining": "Remaining",
+        "steps": "Steps"
     }
 }

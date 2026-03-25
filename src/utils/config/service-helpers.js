@@ -86,7 +86,7 @@ export async function servicesFromDocker() {
         // bad docker connections can result in a <Buffer ...> object?
         // in any case, this ensures the result is the expected array
         if (!Array.isArray(containers)) {
-          return [];
+          return { server: serverName, services: [] };
         }
 
         const discovered = containers.map((container) => {
@@ -188,6 +188,7 @@ export async function servicesFromKubernetes() {
 
     const resources = [...ingressList, ...traefikIngressList, ...httpRouteList];
 
+    /* c8 ignore next 3 -- resources is always an array once the spreads succeed */
     if (!resources) {
       return [];
     }
@@ -258,6 +259,9 @@ export function cleanServiceGroups(groups) {
           highlight,
           type,
 
+          // arcane
+          env,
+
           // azuredevops
           repositoryId,
           userEmail,
@@ -294,6 +298,9 @@ export function cleanServiceGroups(groups) {
           // diskstation
           volume,
 
+          // dispatcharr
+          enableActiveStreams,
+
           // docker
           container,
           server,
@@ -306,7 +313,7 @@ export function cleanServiceGroups(groups) {
           enableNowPlaying,
           enableMediaControl,
 
-          // emby, jellyfin, tautulli
+          // emby, jellyfin, tautulli, tracearr
           enableUser,
           expandOneStreamToTwoRows,
           showEpisodeNumber,
@@ -469,6 +476,10 @@ export function cleanServiceGroups(groups) {
           if (repositoryId) widget.repositoryId = repositoryId;
         }
 
+        if (type === "arcane") {
+          if (env !== undefined) widget.env = env;
+        }
+
         if (type === "beszel") {
           if (systemId) widget.systemId = systemId;
         }
@@ -535,11 +546,14 @@ export function cleanServiceGroups(groups) {
           if (enableBlocks !== undefined) widget.enableBlocks = JSON.parse(enableBlocks);
           if (enableNowPlaying !== undefined) widget.enableNowPlaying = JSON.parse(enableNowPlaying);
         }
-        if (["emby", "jellyfin", "tautulli"].includes(type)) {
+        if (["emby", "jellyfin", "tautulli", "tracearr"].includes(type)) {
           if (expandOneStreamToTwoRows !== undefined)
             widget.expandOneStreamToTwoRows = !!JSON.parse(expandOneStreamToTwoRows);
           if (showEpisodeNumber !== undefined) widget.showEpisodeNumber = !!JSON.parse(showEpisodeNumber);
           if (enableUser !== undefined) widget.enableUser = !!JSON.parse(enableUser);
+        }
+        if (type === "tracearr") {
+          if (view !== undefined) widget.view = view;
         }
         if (["sonarr", "radarr"].includes(type)) {
           if (enableQueue !== undefined) widget.enableQueue = JSON.parse(enableQueue);
@@ -550,6 +564,9 @@ export function cleanServiceGroups(groups) {
         }
         if (["diskstation", "qnap"].includes(type)) {
           if (volume) widget.volume = volume;
+        }
+        if (["dispatcharr"].includes(type)) {
+          if (enableActiveStreams) widget.enableActiveStreams = !!JSON.parse(enableActiveStreams);
         }
         if (type === "gamedig") {
           if (gameToken) widget.gameToken = gameToken;
@@ -564,6 +581,7 @@ export function cleanServiceGroups(groups) {
             "beszel",
             "glances",
             "immich",
+            "jellyfin",
             "komga",
             "mealie",
             "netalertx",
@@ -573,6 +591,7 @@ export function cleanServiceGroups(groups) {
             "wgeasy",
             "grafana",
             "gluetun",
+            "vikunja",
           ].includes(type)
         ) {
           if (version) widget.version = parseInt(version, 10);
@@ -604,7 +623,19 @@ export function cleanServiceGroups(groups) {
           if (refreshInterval) widget.refreshInterval = refreshInterval;
         }
         if (type === "calendar") {
-          if (integrations) widget.integrations = integrations;
+          if (integrations) {
+            if (Array.isArray(integrations)) {
+              widget.integrations = integrations.map((integration) => {
+                if (!integration || typeof integration !== "object") {
+                  return integration;
+                }
+                const { url, ...integrationWithoutUrl } = integration;
+                return integrationWithoutUrl;
+              });
+            } else {
+              widget.integrations = integrations;
+            }
+          }
           if (firstDayInWeek) widget.firstDayInWeek = firstDayInWeek;
           if (view) widget.view = view;
           if (maxEvents) widget.maxEvents = maxEvents;

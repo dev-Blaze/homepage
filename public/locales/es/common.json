@@ -107,6 +107,16 @@
         "episodes": "Episodios",
         "songs": "Canciones"
     },
+    "jellyfin": {
+        "playing": "Reproduciendo",
+        "transcoding": "Convirtiendo",
+        "bitrate": "Tasa de Bits",
+        "no_active": "No hay Streams activos",
+        "movies": "Películas",
+        "series": "Series",
+        "episodes": "Episodios",
+        "songs": "Canciones"
+    },
     "esphome": {
         "offline": "Fuera de línea",
         "offline_alt": "Fuera de línea",
@@ -173,6 +183,13 @@
         "bitrate": "Tasa de bits",
         "no_active": "Sin transmisiones activas",
         "plex_connection_error": "Comprueba la conexión a Plex"
+    },
+    "tracearr": {
+        "no_active": "No Active Streams",
+        "streams": "Streams",
+        "transcodes": "Transcodes",
+        "directplay": "Direct Play",
+        "bitrate": "Bitrate"
     },
     "omada": {
         "connectedAp": "AP conectados",
@@ -272,17 +289,13 @@
         "approved": "Aprobado",
         "available": "Disponible"
     },
-    "jellyseerr": {
-        "pending": "Pendiente",
-        "approved": "Aprobado",
-        "available": "Disponible",
-        "issues": "Issues Abiertos"
-    },
-    "overseerr": {
-        "pending": "Pendiente",
-        "processing": "Procesando",
-        "approved": "Aprobado",
-        "available": "Disponible"
+    "seerr": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "available": "Available",
+        "completed": "Completed",
+        "processing": "Processing",
+        "issues": "Open Issues"
     },
     "netalertx": {
         "total": "Total",
@@ -705,6 +718,10 @@
         "uptime": "Tiempo activo",
         "volumeAvailable": "Disponible"
     },
+    "dispatcharr": {
+        "channels": "Canales",
+        "streams": "Transmisiones"
+    },
     "mylar": {
         "series": "Series",
         "issues": "Números",
@@ -794,10 +811,10 @@
         "series": "Series"
     },
     "booklore": {
-        "libraries": "Libraries",
-        "books": "Books",
-        "reading": "Reading",
-        "finished": "Finished"
+        "libraries": "Librerías",
+        "books": "Libros",
+        "reading": "Lectura",
+        "finished": "Finalizado"
     },
     "jdownloader": {
         "downloadCount": "En cola",
@@ -1136,5 +1153,32 @@
         "songs": "Canciones",
         "time": "Tiempo",
         "artists": "Artistas"
+    },
+    "arcane": {
+        "containers": "Containers",
+        "images": "Images",
+        "image_updates": "Image Updates",
+        "images_unused": "Unused",
+        "environment_required": "Environment ID Required"
+    },
+    "dockhand": {
+        "running": "Activo",
+        "stopped": "Detenido",
+        "cpu": "CPU",
+        "memory": "Memoria",
+        "images": "Imágenes",
+        "volumes": "Volumen",
+        "events_today": "Eventos de hoy",
+        "pending_updates": "Actualizaciones pendientes",
+        "stacks": "Entornos",
+        "paused": "En Pausa",
+        "total": "Total",
+        "environment_not_found": "Entorno no encontrado"
+    },
+    "sparkyfitness": {
+        "eaten": "Eaten",
+        "burned": "Burned",
+        "remaining": "Remaining",
+        "steps": "Steps"
     }
 }

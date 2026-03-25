@@ -107,6 +107,16 @@
         "episodes": "Эпизоды",
         "songs": "Песни"
     },
+    "jellyfin": {
+        "playing": "Воспроизводится",
+        "transcoding": "Перекодирование",
+        "bitrate": "Битрейт",
+        "no_active": "Нет активных потоков",
+        "movies": "Фильмы",
+        "series": "Сериалы",
+        "episodes": "Эпизоды",
+        "songs": "Песни"
+    },
     "esphome": {
         "offline": "Не в сети",
         "offline_alt": "Не в сети",
@@ -173,6 +183,13 @@
         "bitrate": "Битрейт",
         "no_active": "Нет активных стримов",
         "plex_connection_error": "Проверка соединения Plex"
+    },
+    "tracearr": {
+        "no_active": "Нет активных потоков",
+        "streams": "Потоки",
+        "transcodes": "Transcodes",
+        "directplay": "Прямое воспроизведение",
+        "bitrate": "Битрейт"
     },
     "omada": {
         "connectedAp": "Подключенные точки доступа",
@@ -272,17 +289,13 @@
         "approved": "Одобрено",
         "available": "Доступно"
     },
-    "jellyseerr": {
-        "pending": "Ожидают",
+    "seerr": {
+        "pending": "Pending",
         "approved": "Одобрено",
         "available": "Доступно",
-        "issues": "Open Issues"
-    },
-    "overseerr": {
-        "pending": "Ожидают",
-        "processing": "В процессе",
-        "approved": "Одобрено",
-        "available": "Доступно"
+        "completed": "Завершено",
+        "processing": "Обработка",
+        "issues": "Открытые задачи"
     },
     "netalertx": {
         "total": "Всего",
@@ -705,6 +718,10 @@
         "uptime": "Время работы",
         "volumeAvailable": "Доступно"
     },
+    "dispatcharr": {
+        "channels": "Channels",
+        "streams": "Streams"
+    },
     "mylar": {
         "series": "Серии",
         "issues": "Вопросы",
@@ -1116,8 +1133,8 @@
         "NO_DATA_DISKS": "No Data Disks",
         "notifications": "Уведомления",
         "status": "Статус",
-        "cpu": "CPU",
-        "memoryUsed": "Memory Used",
+        "cpu": "ЦП",
+        "memoryUsed": "Использовано ОЗУ",
         "memoryAvailable": "Memory Available",
         "arrayUsed": "Array Used",
         "arrayFree": "Array Free",
@@ -1127,14 +1144,41 @@
     "backrest": {
         "num_plans": "Plans",
         "num_success_30": "Successes",
-        "num_failure_30": "Failures",
+        "num_failure_30": "Ошибки",
         "num_success_latest": "Succeeding",
         "num_failure_latest": "Failing",
         "bytes_added_30": "Bytes Added"
     },
     "yourspotify": {
         "songs": "Songs",
-        "time": "Time",
+        "time": "Время",
         "artists": "Artists"
+    },
+    "arcane": {
+        "containers": "Containers",
+        "images": "Images",
+        "image_updates": "Image Updates",
+        "images_unused": "Unused",
+        "environment_required": "Environment ID Required"
+    },
+    "dockhand": {
+        "running": "Running",
+        "stopped": "Stopped",
+        "cpu": "CPU",
+        "memory": "Memory",
+        "images": "Images",
+        "volumes": "Volumes",
+        "events_today": "Events Today",
+        "pending_updates": "Pending Updates",
+        "stacks": "Stacks",
+        "paused": "Paused",
+        "total": "Total",
+        "environment_not_found": "Среда не найдена"
+    },
+    "sparkyfitness": {
+        "eaten": "Eaten",
+        "burned": "Burned",
+        "remaining": "Remaining",
+        "steps": "Steps"
     }
 }

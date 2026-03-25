@@ -107,6 +107,16 @@
         "episodes": "Episodes",
         "songs": "Liedjies"
     },
+    "jellyfin": {
+        "playing": "Speel",
+        "transcoding": "Transkodering",
+        "bitrate": "Bistempo",
+        "no_active": "Geen Aktiewe Strome",
+        "movies": "Movies",
+        "series": "Reekse",
+        "episodes": "Episode",
+        "songs": "Liedjies"
+    },
     "esphome": {
         "offline": "Vanlyn af",
         "offline_alt": "Vanlyn af",
@@ -173,6 +183,13 @@
         "bitrate": "Bistempo",
         "no_active": "Geen aktiewe strome nie",
         "plex_connection_error": "Gaan Plex-verbinding Na"
+    },
+    "tracearr": {
+        "no_active": "Geen Aktiewe Strome",
+        "streams": "Uitsendings",
+        "transcodes": "Transkodering",
+        "directplay": "Direkte Speel",
+        "bitrate": "Bistempo"
     },
     "omada": {
         "connectedAp": "Gekoppelde APs",
@@ -272,17 +289,13 @@
         "approved": "Goedgekeur",
         "available": "Beskikbaar"
     },
-    "jellyseerr": {
+    "seerr": {
         "pending": "Afwagtend",
         "approved": "Goedgekeur",
         "available": "Beskikbaar",
-        "issues": "Oop Kwessies"
-    },
-    "overseerr": {
-        "pending": "Afwagtend",
+        "completed": "Afgehandel",
         "processing": "Verwerking",
-        "approved": "Goedgekeur",
-        "available": "Beskikbaar"
+        "issues": "Oop Kwessies"
     },
     "netalertx": {
         "total": "Totaal",
@@ -705,6 +718,10 @@
         "uptime": "Optyd",
         "volumeAvailable": "Beskikbaar"
     },
+    "dispatcharr": {
+        "channels": "Kanale",
+        "streams": "Uitsendings"
+    },
     "mylar": {
         "series": "Reekse",
         "issues": "Kwessies",
@@ -794,10 +811,10 @@
         "series": "Reekse"
     },
     "booklore": {
-        "libraries": "Libraries",
-        "books": "Books",
-        "reading": "Reading",
-        "finished": "Finished"
+        "libraries": "Biblioteke",
+        "books": "Boeke",
+        "reading": "Lees",
+        "finished": "Klaar"
     },
     "jdownloader": {
         "downloadCount": "Tou",
@@ -1136,5 +1153,32 @@
         "songs": "Liedjies",
         "time": "Tyd",
         "artists": "Kunstenaars"
+    },
+    "arcane": {
+        "containers": "Houers",
+        "images": "Beelde",
+        "image_updates": "Beeldopdaterings",
+        "images_unused": "Ongebruik",
+        "environment_required": "Omgewings-ID Vereis"
+    },
+    "dockhand": {
+        "running": "Lopend",
+        "stopped": "Gestop",
+        "cpu": "SVE",
+        "memory": "Geheue",
+        "images": "Beelde",
+        "volumes": "Volumes",
+        "events_today": "Vandag se byeenkomste",
+        "pending_updates": "Hangende opdaterings",
+        "stacks": "Stapels",
+        "paused": "Onderbreek",
+        "total": "Totaal",
+        "environment_not_found": "Omgewing Nie Gevind Nie"
+    },
+    "sparkyfitness": {
+        "eaten": "Geëet",
+        "burned": "Verbrand",
+        "remaining": "Oorblywende",
+        "steps": "Stappe"
     }
 }

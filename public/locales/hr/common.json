@@ -107,6 +107,16 @@
         "episodes": "Epizode",
         "songs": "Pjesme"
     },
+    "jellyfin": {
+        "playing": "Reprodukcija u tijeku",
+        "transcoding": "Prekodiranje",
+        "bitrate": "Stopa bitova",
+        "no_active": "No Active Streams",
+        "movies": "Filmovi",
+        "series": "Serije",
+        "episodes": "Epizode",
+        "songs": "Pjesme"
+    },
     "esphome": {
         "offline": "Offline",
         "offline_alt": "Offline",
@@ -173,6 +183,13 @@
         "bitrate": "Stopa bitova",
         "no_active": "Nema aktivnih prijenosa",
         "plex_connection_error": "Provjeri Plex vezu"
+    },
+    "tracearr": {
+        "no_active": "No Active Streams",
+        "streams": "Streams",
+        "transcodes": "Prekodiranja",
+        "directplay": "Izravna reprodukcija",
+        "bitrate": "Stopa bitova"
     },
     "omada": {
         "connectedAp": "Povezani AP-ovi",
@@ -272,17 +289,13 @@
         "approved": "Odobreno",
         "available": "Dostupno"
     },
-    "jellyseerr": {
-        "pending": "U tijeku",
+    "seerr": {
+        "pending": "Na čekanju",
         "approved": "Odobreno",
         "available": "Dostupno",
-        "issues": "Otvoreni problemi"
-    },
-    "overseerr": {
-        "pending": "U tijeku",
+        "completed": "Dovršeno",
         "processing": "Obrada",
-        "approved": "Odobreno",
-        "available": "Dostupno"
+        "issues": "Otvoreni problemi"
     },
     "netalertx": {
         "total": "Ukupno",
@@ -533,7 +546,7 @@
         "up": "Aktivno",
         "pending": "U tijeku",
         "down": "Neaktivno",
-        "ok": "Ok"
+        "ok": "U redu"
     },
     "healthchecks": {
         "new": "Novo",
@@ -601,11 +614,11 @@
         "total": "Ukupno"
     },
     "pangolin": {
-        "orgs": "Orgs",
-        "sites": "Sites",
-        "resources": "Resources",
-        "targets": "Targets",
-        "traffic": "Traffic",
+        "orgs": "Organizacije",
+        "sites": "Web-stranice",
+        "resources": "Resursi",
+        "targets": "Ciljevi",
+        "traffic": "Promet",
         "in": "In",
         "out": "Out"
     },
@@ -705,6 +718,10 @@
         "uptime": "Vrijeme rada",
         "volumeAvailable": "Dostupno"
     },
+    "dispatcharr": {
+        "channels": "Kanali",
+        "streams": "Streams"
+    },
     "mylar": {
         "series": "Serije",
         "issues": "Problemi",
@@ -794,10 +811,10 @@
         "series": "Serije"
     },
     "booklore": {
-        "libraries": "Libraries",
-        "books": "Books",
-        "reading": "Reading",
-        "finished": "Finished"
+        "libraries": "Knjižnice",
+        "books": "Knjige",
+        "reading": "Čitanje",
+        "finished": "Završeno"
     },
     "jdownloader": {
         "downloadCount": "Red čekanja",
@@ -1136,5 +1153,32 @@
         "songs": "Pjesme",
         "time": "Vrijeme",
         "artists": "Izvođači"
+    },
+    "arcane": {
+        "containers": "Kontejneri",
+        "images": "Slike",
+        "image_updates": "Aktualizirane slike",
+        "images_unused": "Nekorišteno",
+        "environment_required": "ID okruženja se mora navesti"
+    },
+    "dockhand": {
+        "running": "Pokreće se",
+        "stopped": "Zaustavljeno",
+        "cpu": "CPU",
+        "memory": "Memorija",
+        "images": "Slike",
+        "volumes": "Jedinice memorije",
+        "events_today": "Događanja danas",
+        "pending_updates": "Aktualiziranja na čekanju",
+        "stacks": "Stacks",
+        "paused": "Pauzirano",
+        "total": "Ukupno",
+        "environment_not_found": "Okruženje nije pronađeno"
+    },
+    "sparkyfitness": {
+        "eaten": "Pojedeno",
+        "burned": "Potrošeno",
+        "remaining": "Preostalo",
+        "steps": "Koraci"
     }
 }
