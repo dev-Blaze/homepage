@@ -8,9 +8,7 @@ function StockItem({ service, item }) {
   const { t } = useTranslation();
   const { widget } = service;
 
-  const symbol = typeof item === "string" ? item : item.symbol;
-  const displayName = typeof item === "object" && item.name ? item.name : symbol;
-  const range = typeof item === "object" && item.range ? item.range : "1d";
+  const { symbol, name: displayName = symbol, range = "1d" } = typeof item === "string" ? { symbol: item } : item;
 
   const { data, error } = useWidgetAPI(widget, "quote", { symbol, range });
 
@@ -38,7 +36,7 @@ function StockItem({ service, item }) {
 
   const price = result.regularMarketPrice;
   const close = result.chartPreviousClose;
-  const changePercent = ((price - close) / close) * 100;
+  const changePercent = close ? ((price - close) / close) * 100 : NaN;
 
   return (
     <div className="bg-theme-200/50 dark:bg-theme-900/20 rounded-sm flex flex-1 items-center justify-between m-1 p-2">
@@ -61,11 +59,13 @@ function StockItem({ service, item }) {
               })
             : t("widget.api_error")}
         </span>
-        <span
-          className={`text-xs font-bold ${changePercent > 0 ? "text-emerald-500 dark:text-emerald-400" : "text-rose-500 dark:text-rose-400"}`}
-        >
-          {changePercent > 0 ? "▲" : "▼"} {Math.abs(changePercent)?.toFixed(2)}%
-        </span>
+        {Number.isFinite(changePercent) && (
+          <span
+            className={`text-xs font-bold ${changePercent >= 0 ? "text-emerald-500 dark:text-emerald-400" : "text-rose-500 dark:text-rose-400"}`}
+          >
+            {changePercent >= 0 ? "▲" : "▼"} {Math.abs(changePercent).toFixed(2)}%
+          </span>
+        )}
       </div>
     </div>
   );
@@ -87,10 +87,9 @@ export default function Component({ service }) {
   return (
     <Container service={service}>
       <div className="flex flex-col w-full">
-        {symbols.map((item, index) => {
-          const key = typeof item === "string" ? item : item.symbol + index;
-          return <StockItem key={key} service={service} item={item} />;
-        })}
+        {symbols.map((item, index) => (
+          <StockItem key={(typeof item === "string" ? item : item.symbol) + index} service={service} item={item} />
+        ))}
       </div>
     </Container>
   );

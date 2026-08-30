@@ -3,64 +3,42 @@ import { httpProxy } from "utils/proxy/http";
 
 const logger = createLogger("yahooFinanceProxy");
 
-function getIntervalForRange(range) {
-  switch (range) {
-    case "1h":
-      return "1m";
-    case "1d":
-      return "2m"; // Yahoo defaults to 2m for 1d often
-    case "5d":
-      return "15m";
-    case "1mo":
-      return "30m";
-    case "3mo":
-      return "1d";
-    case "6mo":
-      return "1d";
-    case "1y":
-      return "1d";
-    case "2y":
-      return "1wk";
-    case "5y":
-      return "1wk";
-    case "10y":
-      return "1mo";
-    case "ytd":
-      return "1d";
-    case "max":
-      return "3mo";
-    default:
-      return "1d";
-  }
-}
+// range -> chart interval; also serves as the allowlist of valid ranges
+const INTERVALS = {
+  "1h": "1m",
+  "1d": "2m",
+  "5d": "15m",
+  "1mo": "30m",
+  "3mo": "1d",
+  "6mo": "1d",
+  "1y": "1d",
+  "2y": "1wk",
+  "5y": "1wk",
+  "10y": "1mo",
+  ytd: "1d",
+  max: "3mo",
+};
 
 export default async function yahooFinanceProxyHandler(req, res) {
   const { endpoint } = req.query;
 
   if (endpoint === "quote" && req.query.query) {
     try {
-      const query = JSON.parse(req.query.query);
-      const { symbol, range = "1d" } = query;
-      const interval = getIntervalForRange(range);
+      const { symbol, range: requestedRange } = JSON.parse(req.query.query);
+      const range = requestedRange in INTERVALS ? requestedRange : "1d";
 
       if (symbol) {
-        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=${interval}&range=${range}`;
+        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=${
+          INTERVALS[range]
+        }&range=${range}`;
         const [status, contentType, data] = await httpProxy(url, {
           headers: {
             "User-Agent": "Mozilla/5.0",
           },
         });
 
-        let resultData = data;
-        if (status === 200) {
-          // Check for API errors in 200 OK response
-          if (resultData && resultData.chart && resultData.chart.error) {
-            return res.status(500).json({ error: resultData.chart.error });
-          }
-        }
-
         if (contentType) res.setHeader("Content-Type", contentType);
-        return res.status(status).send(resultData);
+        return res.status(status).send(data);
       }
     } catch (e) {
       logger.error("Error parsing query or fetching data: %s", e);
